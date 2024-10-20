@@ -1,0 +1,94 @@
+/*!
+ * =====================================================
+ * Photon v0.1.2
+ * Copyright 2015 Connor Sears
+ * Licensed under MIT (https://github.com/connors/proton/blob/master/LICENSE)
+ *
+ * v0.1.2 designed by @connors.
+ * =====================================================
+ */
+
+@font-face {
+  font-family: "photon-entypo";
+  src: url("./fonts/photon-entypo.eot");
+  src: url("./fonts/photon-entypo.eot?#iefix") format("eot"),
+    url("./fonts/photon-entypo.woff") format("woff"),
+    url("./fonts/photon-entypo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+hr {
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.toolbar {
+  // min-height: 22px;
+  min-height: 62px;
+  box-shadow: inset 0 1px 0 #f5f4f5;
+  background-color: #e8e6e8;
+  background-image: gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #e8e6e8),
+    color-stop(100%, #d1cfd1)
+  );
+  background-image: linear-gradient(to bottom, #e8e6e8 0%, #d1cfd1 100%);
+
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.toolbar-header {
+  border-bottom: 1px solid #c2c0c2;
+}
+.toolbar-header .title {
+  margin-top: 1px;
+}
+
+.toolbar-footer {
+  border-top: 1px solid #c2c0c2;
+  -webkit-app-region: drag;
+}
+
+.title-bar {
+  text-align: center;
+
+  .title {
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: bold;
+    // text-align: center;
+    color: #555;
+    cursor: default;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 60%;
+    text-overflow: ellipsis;
+  }
+}

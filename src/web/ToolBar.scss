@@ -1,0 +1,210 @@
+button {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.toolbar-actions {
+  margin-top: 6px;
+  margin-bottom: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  -webkit-app-region: drag;
+
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+button {
+  margin: 0;
+  font: inherit;
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  align-items: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: default;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 6%);
+  -webkit-app-region: no-drag;
+}
+
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-app-region: no-drag;
+}
+
+.btn-group .btn {
+  position: relative;
+  float: left;
+}
+.btn-group .btn:focus,
+.btn-group .btn:active {
+  z-index: 2;
+}
+.btn-group .btn.active {
+  z-index: 3;
+}
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.btn-group > .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group > .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group .btn + .btn {
+  border-left: 1px solid #c2c0c2;
+}
+.btn-group .btn + .btn.active {
+  border-left: 0;
+}
+.btn-group .active {
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #6d6c6d;
+  background-image: none;
+}
+.btn-group .active .icon {
+  color: #fff;
+}
+
+.pull-right {
+  float: right;
+}
+
+.toolbar-actions > .btn,
+.toolbar-actions > .btn-group {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: default;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+  -webkit-app-region: no-drag;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn .icon {
+  float: left;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color: #737475;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.btn .icon-text {
+  margin-right: 5px;
+}
+
+.btn-default {
+  color: #333;
+  border-top-color: #c2c0c2;
+  border-right-color: #c2c0c2;
+  border-bottom-color: #a19fa1;
+  border-left-color: #c2c0c2;
+  background-color: #fcfcfc;
+  background-image: gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #fcfcfc),
+    color-stop(100%, #f1f1f1)
+  );
+  background-image: linear-gradient(to bottom, #fcfcfc 0%, #f1f1f1 100%);
+}
+.btn-default:active {
+  background-color: #ddd;
+  background-image: none;
+}
+
+.icon:before {
+  position: relative;
+  display: inline-block;
+  font-family: "photon-entypo";
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-layout:before {
+  content: "\e810";
+}
+
+.icon-trash:before {
+  content: "\e847";
+}
+
+.icon-folder:before {
+  content: "\e850";
+}
+
+.icon-logout:before {
+  content: "\e85d";
+}
+
+.icon-left-open:before {
+  content: "\e874";
+}
+
+.icon-right-open:before {
+  content: "\e875";
+}
