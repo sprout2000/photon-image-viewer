@@ -2,7 +2,7 @@
   "name": "photon-image-viewer",
   "productName": "Photon Image Viewer",
   "description": "Classic light-mode image viewer for macOS",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": {
     "name": "sprout2000"
