@@ -1,6 +1,8 @@
-import { type IpcRendererEvent, contextBridge, ipcRenderer } from "electron";
+import { contextBridge, ipcRenderer, webUtils } from "electron";
 
 contextBridge.exposeInMainWorld("myAPI", {
+  getFilePath: (file: File) => webUtils.getPathForFile(file),
+
   mimecheck: (filepath: string): Promise<boolean> =>
     ipcRenderer.invoke("mime-check", filepath),
 
@@ -32,14 +34,20 @@ contextBridge.exposeInMainWorld("myAPI", {
   },
 
   menuOpen: (
-    listener: (_e: IpcRendererEvent, filepath: string) => Promise<void>,
+    listener: (
+      _e: Electron.IpcRendererEvent,
+      filepath: string,
+    ) => Promise<void>,
   ) => {
     ipcRenderer.on("menu-open", listener);
     return () => ipcRenderer.removeAllListeners("menu-open");
   },
 
   toggleGrid: (
-    listener: (_e: IpcRendererEvent, filepath: string) => Promise<void>,
+    listener: (
+      _e: Electron.IpcRendererEvent,
+      filepath: string,
+    ) => Promise<void>,
   ) => {
     ipcRenderer.on("toggle-grid", listener);
     return () => ipcRenderer.removeAllListeners("toggle-grid");

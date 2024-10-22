@@ -5,7 +5,7 @@ declare global {
 }
 
 export interface IElectronAPI {
-  contextMenu: () => Promise<void>;
+  getFilePath: (file: File) => string;
 
   mimecheck: (filepath: string) => Promise<boolean>;
 

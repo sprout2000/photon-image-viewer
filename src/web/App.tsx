@@ -31,8 +31,9 @@ export const App = () => {
 
       if (file.name.startsWith(".")) return;
 
-      const mime = await myAPI.mimecheck(file.path);
-      if (mime) setUrl(file.path);
+      const filepath = myAPI.getFilePath(file);
+      const mime = await myAPI.mimecheck(filepath);
+      if (mime) setUrl(filepath);
     }
   };
 
