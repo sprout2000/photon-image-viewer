@@ -17,7 +17,7 @@
     "dev:rspack": "rspack --node-env \"development\"",
     "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon .",
     "build": "rimraf dist && rspack --node-env \"production\"",
-    "package": "ts-node builder.ts"
+    "package": "ts-node scripts/packager.ts"
   },
   "dependencies": {
     "electron-store": "^10.0.0",
@@ -36,6 +36,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "css-loader": "^7.1.2",
+    "dotenv": "^16.4.5",
     "electron": "^33.2.1",
     "electron-builder": "^24.13.3",
     "electronmon": "^2.0.3",
