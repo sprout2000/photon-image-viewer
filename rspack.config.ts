@@ -1,6 +1,5 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import type { Configuration } from "webpack";
+import type { Configuration } from "@rspack/cli";
+import { CssExtractRspackPlugin, HtmlRspackPlugin } from "@rspack/core";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -15,11 +14,23 @@ const common: Configuration = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "ts-loader",
+        loader: "builtin:swc-loader",
+        options: {
+          jsc: {
+            parser: {
+              syntax: "typescript",
+            },
+            transform: {
+              react: {
+                runtime: "automatic",
+              },
+            },
+          },
+        },
       },
       {
         test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [CssExtractRspackPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|eot|ttf|woff)$/,
@@ -27,9 +38,9 @@ const common: Configuration = {
       },
     ],
   },
-  stats: "errors-only",
+  stats: "summary",
   watch: isDev,
-  devtool: isDev ? "source-map" : undefined,
+  devtool: isDev ? "source-map" : false,
 };
 
 const main: Configuration = {
@@ -55,8 +66,8 @@ const renderer: Configuration = {
     index: "./src/web/index.tsx",
   },
   plugins: [
-    new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
+    new CssExtractRspackPlugin(),
+    new HtmlRspackPlugin({
       inject: "body",
       template: "./src/web/index.html",
     }),
