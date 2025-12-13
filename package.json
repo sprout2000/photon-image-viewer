@@ -1,52 +1,52 @@
 {
-	"name": "photon-image-viewer",
-	"productName": "Photon Image Viewer",
-	"description": "Classic light-mode image viewer for macOS",
-	"version": "0.0.4",
-	"license": "MIT",
-	"author": {
-		"name": "sprout2000"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:sprout2000/photon-image-viewer.git"
-	},
-	"main": "dist/main.js",
-	"scripts": {
-		"dev": "rimraf dist && run-p dev:rspack dev:electron",
-		"dev:rspack": "rspack --node-env \"development\"",
-		"dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon .",
-		"build": "rimraf dist && rspack --node-env \"production\"",
-		"package": "ts-node scripts/packager.ts"
-	},
-	"dependencies": {
-		"electron-store": "^11.0.2",
-		"leaflet": "^1.9.4",
-		"mime-types": "^3.0.2",
-		"react": "^19.2.3",
-		"react-dom": "^19.2.3"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
-		"@rspack/cli": "^1.6.7",
-		"@rspack/core": "^1.6.7",
-		"@types/leaflet": "^1.9.21",
-		"@types/mime-types": "^3.0.1",
-		"@types/node": "^25.0.1",
-		"@types/react": "^19.2.7",
-		"@types/react-dom": "^19.2.3",
-		"css-loader": "^7.1.2",
-		"dotenv": "^17.2.3",
-		"electron": "^39.2.7",
-		"electron-builder": "^24.13.3",
-		"electronmon": "^2.0.4",
-		"npm-run-all": "^4.1.5",
-		"rimraf": "^6.1.2",
-		"sass": "^1.96.0",
-		"sass-loader": "^16.0.6",
-		"ts-loader": "^9.5.4",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.9.3",
-		"wait-on": "^9.0.3"
-	}
+  "name": "photon-image-viewer",
+  "productName": "Photon Image Viewer",
+  "description": "Classic light-mode image viewer for macOS",
+  "version": "0.0.4",
+  "license": "MIT",
+  "author": {
+    "name": "sprout2000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sprout2000/photon-image-viewer.git"
+  },
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "rimraf dist && run-p dev:rspack dev:electron",
+    "dev:rspack": "rspack --node-env \"development\"",
+    "dev:electron": "wait-on ./dist/index.html ./dist/main.js && electronmon .",
+    "build": "rimraf dist && rspack --node-env \"production\"",
+    "package": "ts-node scripts/packager.ts"
+  },
+  "dependencies": {
+    "electron-store": "^11.0.2",
+    "leaflet": "^1.9.4",
+    "mime-types": "^3.0.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@rspack/cli": "^1.6.7",
+    "@rspack/core": "^1.6.7",
+    "@types/leaflet": "^1.9.21",
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "css-loader": "^7.1.2",
+    "dotenv": "^17.2.3",
+    "electron": "^39.2.7",
+    "electron-builder": "^24.13.3",
+    "electronmon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.1.2",
+    "sass": "^1.96.0",
+    "sass-loader": "^16.0.6",
+    "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.3"
+  }
 }
