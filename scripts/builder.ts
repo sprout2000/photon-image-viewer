@@ -1,5 +1,5 @@
-import { build } from "electron-builder";
 import dotenv from "dotenv";
+import { build } from "electron-builder";
 
 dotenv.config();
 

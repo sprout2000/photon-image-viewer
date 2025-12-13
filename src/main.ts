@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 
 import {
-  BrowserWindow,
-  type IpcMainInvokeEvent,
-  Menu,
   app,
+  BrowserWindow,
   dialog,
+  type IpcMainInvokeEvent,
   ipcMain,
+  Menu,
   nativeTheme,
   shell,
 } from "electron";

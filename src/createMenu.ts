@@ -2,9 +2,9 @@ import path from "node:path";
 
 import {
   type BrowserWindow,
+  dialog,
   Menu,
   type MenuItemConstructorOptions,
-  dialog,
 } from "electron";
 
 export const createMenu = (win: BrowserWindow) => {
