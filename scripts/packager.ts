@@ -4,7 +4,7 @@ build({
   config: {
     productName: "Photon Image Viewer",
     artifactName: "${productName}-${version}-${platform}-${arch}.${ext}",
-    copyright: "© 2020 sprout2000 and other contributors.",
+    copyright: "© 2020 sprout2000",
     directories: {
       output: "release",
       buildResources: "assets",
