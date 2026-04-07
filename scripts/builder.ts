@@ -47,9 +47,6 @@ build({
         NSRequiresAquaSystemAppearance: false,
       },
       // identity: null,
-      notarize: {
-        teamId: "285FKU3L4F",
-      },
     },
   },
 });
