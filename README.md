@@ -47,4 +47,4 @@ And then, you will find the installer in the `release` directory.
 
 ## :copyright: Copyright
 
-Copyright (c) 2024 sprout2000
+Copyright (c) 2020 sprout2000
