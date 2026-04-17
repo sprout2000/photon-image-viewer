@@ -22,6 +22,7 @@ let openfile: string | null = null;
 const initWidth = 800;
 const initHeight = 528;
 const isDev = process.env.NODE_ENV === "development";
+const isWin32 = process.platform === "win32";
 
 const store = new Store<StoreType>({
   configFileMode: 0o666,
@@ -51,8 +52,9 @@ const createWindow = () => {
 
   const mainWindow = new BrowserWindow({
     show: false,
-    frame: false,
-    titleBarStyle: "hidden",
+    frame: isWin32,
+    titleBarStyle: isWin32 ? "default" : "hidden",
+    autoHideMenuBar: isWin32,
     x: store.get("x"),
     y: store.get("y"),
     minWidth: initWidth,
