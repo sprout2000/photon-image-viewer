@@ -16,12 +16,7 @@ build({
     mac: {
       appId: "jp.wassabie64.Photon Image Viewer",
       category: "public.app-category.photography",
-      target: [
-        {
-          target: "default",
-          arch: ["x64", "arm64"],
-        },
-      ],
+      target: ["default"],
       icon: "assets/icon.icns",
       darkModeSupport: true,
       extendInfo: {
