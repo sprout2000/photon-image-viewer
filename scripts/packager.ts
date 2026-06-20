@@ -4,12 +4,31 @@ build({
   config: {
     productName: "Photon Image Viewer",
     artifactName: "${productName}-${version}-${platform}-${arch}.${ext}",
-    copyright: "© 2020 sprout2000",
+    copyright: "© 2024 sprout2000",
     directories: {
       output: "release",
       buildResources: "assets",
     },
     files: ["dist/**/*"],
+    win: {
+      icon: "assets/icon.ico",
+      target: ["nsis"],
+      fileAssociations: [
+        {
+          ext: ["bmp", "gif", "jpeg", "jpg", "png", "ico", "svg", "webp"],
+          description: "Image files",
+        },
+      ],
+    },
+    nsis: {
+      oneClick: false,
+      perMachine: false,
+      createDesktopShortcut: false,
+      createStartMenuShortcut: true,
+      installerIcon: "assets/installer.ico",
+      artifactName:
+        "${productName}-${version}-${platform}-${arch}-installer.${ext}",
+    },
     mac: {
       appId: "jp.wassabie64.Photon Image Viewer",
       category: "public.app-category.photography",
