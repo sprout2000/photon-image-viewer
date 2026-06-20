@@ -1,36 +1,30 @@
-import type { Configuration } from "@rspack/cli";
-import { CssExtractRspackPlugin, HtmlRspackPlugin } from "@rspack/core";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 
-const common: Configuration = {
+/** @type import("webpack").Configuration */
+const common = {
   mode: isDev ? "development" : "production",
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
   },
   externals: ["fsevents"],
+  output: {
+    publicPath: "./",
+    filename: "[name].js",
+    assetModuleFilename: "images/[name][ext]",
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "builtin:swc-loader",
-        options: {
-          jsc: {
-            parser: {
-              syntax: "typescript",
-            },
-            transform: {
-              react: {
-                runtime: "automatic",
-              },
-            },
-          },
-        },
+        loader: "ts-loader",
       },
       {
         test: /\.s?css$/,
-        use: [CssExtractRspackPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|eot|ttf|woff)$/,
@@ -38,12 +32,13 @@ const common: Configuration = {
       },
     ],
   },
-  stats: "summary",
   watch: isDev,
+  stats: "errors-only",
   devtool: isDev ? "source-map" : false,
 };
 
-const main: Configuration = {
+/** @type import("webpack").Configuration */
+const main = {
   ...common,
   target: "electron-main",
   entry: {
@@ -51,7 +46,8 @@ const main: Configuration = {
   },
 };
 
-const preload: Configuration = {
+/** @type import("webpack").Configuration */
+const preload = {
   ...common,
   target: "electron-preload",
   entry: {
@@ -59,19 +55,19 @@ const preload: Configuration = {
   },
 };
 
-const renderer: Configuration = {
+/** @type import("webpack").Configuration */
+const renderer = {
   ...common,
   target: "web",
   entry: {
-    index: "./src/web/index.tsx",
+    app: "./src/web/index.tsx",
   },
   plugins: [
-    new CssExtractRspackPlugin(),
-    new HtmlRspackPlugin({
-      inject: "body",
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
       template: "./src/web/index.html",
     }),
   ],
 };
 
-export default [main, preload, renderer];
+module.exports = [main, preload, renderer];
