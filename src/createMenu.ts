@@ -1,6 +1,7 @@
 import path from "node:path";
 
 import {
+  app,
   type BrowserWindow,
   dialog,
   Menu,
@@ -28,6 +29,7 @@ export const createMenu = (win: BrowserWindow) => {
               .showOpenDialog(win, {
                 properties: ["openFile"],
                 title: "Select an image",
+                defaultPath: app.getPath("pictures"),
                 filters: [
                   {
                     name: "Image files",

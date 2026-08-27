@@ -101,6 +101,7 @@ const createWindow = () => {
       .showOpenDialog(mainWindow, {
         properties: ["openFile"],
         title: "Select an image",
+        defaultPath: app.getPath("pictures"),
         filters: [
           {
             name: "Image files",
