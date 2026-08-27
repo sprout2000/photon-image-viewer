@@ -63,8 +63,6 @@ const createWindow = () => {
     height: store.get("height"),
     icon: path.resolve(getResourceDirectory(), "logo.png"),
     webPreferences: {
-      safeDialogs: true,
-      devTools: isDev,
       preload: path.resolve(__dirname, "preload.js"),
     },
   });
