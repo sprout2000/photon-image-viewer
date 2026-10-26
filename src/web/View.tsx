@@ -17,7 +17,7 @@ export const View = memo(({ url = "" }: Props) => {
       if (iw > w || ih > h) {
         const zoomX = w / iw;
         const zoomY = h / ih;
-        return zoomX >= zoomY ? zoomY : zoomX;
+        return Math.min(zoomX, zoomY);
       }
       return 1;
     },
