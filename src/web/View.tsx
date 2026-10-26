@@ -10,7 +10,7 @@ type Props = {
 
 export const View = memo(({ url = "" }: Props) => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapObj: React.MutableRefObject<L.Map | null> = useRef(null);
+  const mapObj: React.RefObject<L.Map | null> = useRef(null);
 
   const getZoom = useCallback(
     (iw: number, w: number, ih: number, h: number) => {
